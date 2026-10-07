@@ -28,5 +28,3 @@ jobs:
           context: .
           push: true
           tags: vasavikandala/python-app:latest
-      
-        
