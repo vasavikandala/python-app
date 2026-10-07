@@ -1,10 +1,7 @@
-name: CI
+name: Docker Build and Push
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -27,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: vasavikandala/python-app:latest
+          tags: vasavi2002/python-app:latest
