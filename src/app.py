@@ -10,6 +10,7 @@ def details():
     return jsonify({
         'time': datetime.datetime.now().strftime("%I:%M:%Sp on %B %d, %Y"),
         'hostname': socket.gethostname()
+        'message': 'You are doing greate, human!'
     })
 
 @app.route('/')
