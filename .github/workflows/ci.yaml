@@ -32,4 +32,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: vasavi2002/python-app:{GITHUB_SHA::6}
+          tags: vasavi2002/python-app:${{github.sha}}
