@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: vasavi2002/python-app:latest
+          tags: vasavi2002/python-app:${{github.sha}}
