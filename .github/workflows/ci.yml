@@ -23,6 +23,6 @@ jobs:
       -   name: Build and push Docker image
           uses: docker/build-push-action@v6
           with:
-          context: .
-          push: true
-          tags: vasavi2002/python-app:${{env.COMMIT_ID}}
+            context: .
+            push: true
+            tags: vasavi2002/python-app:${{ env.COMMIT_ID }}
