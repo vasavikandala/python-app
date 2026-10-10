@@ -26,4 +26,4 @@ jobs:
             context: .
             file: ./Dockerfile
             push: true
-            tags: vasavi2002/python-app:${{ env.COMMIT_ID }}
+            tags: vasavi2002/python-app:${{ github.sha }}
