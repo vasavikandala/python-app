@@ -53,7 +53,7 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           
-          message: 'Update values.yaml with commit ${{ needs.ci.outputs.commits_id}}'
+          message: 'Updates values.yaml with commit ${{ needs.ci.outputs.commits_id}}'
         
 
       - name: Install Argo CD CLI
