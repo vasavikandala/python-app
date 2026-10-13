@@ -34,11 +34,28 @@ jobs:
             file: ./Dockerfile
             push: true
             tags: vasavi2002/python-app:${{ env.COMMIT_ID }}
+    outputs:
+      commit_id: ${{ env.COMMIT_ID}}
 
   cd:
     needs: ci
     runs-on: self-hosted
     steps:
+      - uses: actions/checkout@v3
+      - name: Modify values file
+        shell: bash
+        run:
+          echo ${{ needs.ci.outputs.commits_id}}
+          pip install yq
+          yq -Yi '.image.tag = "${{ needs.ci.outputs.commits_id}}"' charts/python-app/values.yaml
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          
+          message: 'Update values.yaml with commit ${{ needs.ci.outputs.commits_id}}'
+        
+
       - name: Install Argo CD CLI
         run: |
           curl -fL --retry 5 --retry-all-errors --retry-delay 3 \
@@ -46,6 +63,7 @@ jobs:
             https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
           sudo install -m 555 argocd /usr/local/bin/argocd
           argocd version --client
+
 
       - name: ArgoCD app sync
         shell: bash
