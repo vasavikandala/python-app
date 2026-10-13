@@ -9,8 +9,8 @@ app = Flask(__name__)
 def details():
     return jsonify({
         'time': datetime.datetime.now().strftime("%I:%M:%Sp on %B %d, %Y"),
-        'hostname': socket.gethostname()
-        'message': 'You are doing greate, human!! <3'
+        'hostname': socket.gethostname(),
+        'message': 'You are doing greate, human!! <3',
     })
 
 @app.route('/')
