@@ -1,0 +1,23 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: python-flask-template
+  title: Python flask template
+  description: Provisions a minimalist flask application
+spec:
+  owner: development
+  type: service
+  parameters:
+    - title: Fill in some steps
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+  steps:
+    - id: log
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Creating Python Flask application'
