@@ -39,7 +39,7 @@ jobs:
 
   cd:
     needs: ci
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Modify values file
