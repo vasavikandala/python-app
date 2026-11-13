@@ -7,3 +7,4 @@ spec:
   template:
     spec:
       repository: vasavikandala/python-app
+      ephemeral: false
