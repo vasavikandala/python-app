@@ -39,7 +39,7 @@ jobs:
 
   cd:
     needs: ci
-    runs-on: self-hosted
+    runs-on: [self-hosted, k8s-runner]
     permissions:
       contents: write
     steps:
