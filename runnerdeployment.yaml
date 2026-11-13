@@ -6,4 +6,4 @@ spec:
   replicas: 1
   template:
     spec:
-      repository: Vasavi2002/python-app
+      repository: vasavikandala/python-app
